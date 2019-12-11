@@ -191,7 +191,7 @@ class performance_model(ABC):
         if n_cores > max_cores_in_dict:
             return self.best_performance()
         elif n_cores < min_cores_in_dict:
-            return self._search_dic[min_cores_in_dict]
+            return float('inf')
         else:
             while (eval_cores not in available_cores and eval_cores > 1):
                 eval_cores -= 1

@@ -74,7 +74,7 @@ def main():
     opt_RDH = opt_ic.RDHOptimizer(pf_RHD, 1)
 
     print("####################################### sgx + RDH")
-    for deadline in [120.160927471624, 177.011577047059]:
+    for deadline in [120.160927471624, 177.011577047059, 231.925289243116]:
         sol = opt_RDH.solve(deadline)
         if sol > 1 and pf_RHD.predict(sol - 1) < deadline:
             print("Unexpected condition: With deadline " + str(deadline) + " prediction is " + str(sol) + " but " + str(sol - 1) + " takes " + str(pf_RHD.predict(sol - 1)))
